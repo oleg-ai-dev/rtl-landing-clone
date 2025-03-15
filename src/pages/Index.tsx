@@ -4,6 +4,9 @@ import { Phone, ChevronDown } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import AccordionSection from '@/components/AccordionSection';
 import TestimonialSection from '@/components/TestimonialSection';
+import EmgBenefitsSection from '@/components/EmgBenefitsSection';
+import AboutSection from '@/components/AboutSection';
+import { Textarea } from '@/components/ui/textarea';
 
 const Index = () => {
   useEffect(() => {
@@ -26,12 +29,19 @@ const Index = () => {
       {/* Header with Logo and CTA */}
       <header className="bg-medblue sticky top-0 z-50 shadow-md">
         <div className="container mx-auto py-3 px-4 flex justify-between items-center">
-          <a href="tel:+972123456789" className="flex items-center gap-2 bg-white text-medblue rounded-md px-4 py-2 font-medium text-sm hover:bg-gray-100 transition-colors">
-            <Phone size={16} />
-            <span>התקשרו עכשיו</span>
-          </a>
           <div className="text-white font-bold text-xl">
-            MEDASSIST
+            <img 
+              src="/lovable-uploads/0129c4d1-1a85-436e-ac82-f1a37da97565.png"
+              alt="MEDASSIST Logo"
+              className="h-10 object-contain"
+            />
+          </div>
+          <div className="flex flex-col items-end">
+            <div className="text-white text-sm mb-1">בדיקת EMG</div>
+            <a href="tel:03-300-8863" className="flex items-center gap-2 bg-orange-500 text-white rounded-md px-4 py-2 font-medium text-sm hover:bg-orange-600 transition-colors">
+              <span>03-300-8863</span>
+              <Phone size={16} />
+            </a>
           </div>
         </div>
       </header>
@@ -95,30 +105,42 @@ const Index = () => {
               {
                 title: "צוות מומחים מנוסה",
                 description: "צוות הרופאים והמטפלים שלנו בעל ניסיון רב בביצוע בדיקות EMG ופירוש התוצאות.",
-                delay: "animate-delay-100"
+                delay: "animate-delay-100",
+                image: "/lovable-uploads/ab41fbcd-f023-40f0-b5c0-c3fef4fe0aea.png"
               },
               {
                 title: "ציוד מתקדם",
                 description: "אנו משתמשים בטכנולוגיה המתקדמת ביותר לביצוע בדיקות EMG, המבטיחה תוצאות מדויקות.",
-                delay: "animate-delay-200"
+                delay: "animate-delay-200",
+                image: "/lovable-uploads/b4bd302e-9dfc-46e7-b94b-6b10ba38a2cf.png"
               },
               {
                 title: "טיפול אישי",
                 description: "כל מטופל מקבל התייחסות אישית ותוכנית טיפול המותאמת לצרכיו הספציפיים.",
-                delay: "animate-delay-300"
+                delay: "animate-delay-300",
+                image: "/lovable-uploads/0129c4d1-1a85-436e-ac82-f1a37da97565.png"
               }
             ].map((feature, index) => (
               <div 
                 key={index} 
-                className={`bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 text-right opacity-0 animate-fadeIn ${feature.delay}`}
+                className={`bg-medblue-dark p-6 rounded-lg shadow-md text-right opacity-0 animate-fadeIn ${feature.delay}`}
               >
-                <h3 className="text-xl font-semibold mb-3 text-medblue-dark">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <div className="bg-white p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                  <img src={feature.image} alt={feature.title} className="h-10 w-10 object-contain" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+                <p className="text-medblue-light">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* EMG Benefits Section */}
+      <EmgBenefitsSection />
+
+      {/* About MEDASSIST Section */}
+      <AboutSection />
 
       {/* Process Section with parallax effect */}
       <section className="py-16 bg-gray-50 overflow-hidden">
@@ -225,16 +247,16 @@ const Index = () => {
               <div>
                 <input 
                   type="email" 
-                  placeholder="אימייל" 
+                  placeholder="דוא״ל" 
                   className="form-input" 
                 />
               </div>
               <div>
-                <textarea 
-                  placeholder="הודעה (אופציונלי)" 
+                <Textarea 
+                  placeholder="פרטי בדיקה" 
                   rows={4} 
-                  className="form-input" 
-                ></textarea>
+                  className="form-input resize-none" 
+                />
               </div>
               <div className="text-right">
                 <button 
@@ -247,8 +269,8 @@ const Index = () => {
             </form>
             <div className="mt-8 text-center">
               <div className="text-gray-500 mb-2">או התקשרו ישירות</div>
-              <a href="tel:+972123456789" className="text-xl font-bold text-medblue hover:text-medblue-dark transition-colors">
-                *5555
+              <a href="tel:03-300-8863" className="text-xl font-bold text-medblue hover:text-medblue-dark transition-colors">
+                03-300-8863
               </a>
             </div>
           </div>

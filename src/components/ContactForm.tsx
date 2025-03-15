@@ -4,10 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Phone } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import { Textarea } from '@/components/ui/textarea';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [details, setDetails] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
@@ -24,6 +27,8 @@ const ContactForm = () => {
       });
       setName('');
       setPhone('');
+      setEmail('');
+      setDetails('');
     }, 1000);
   };
 
@@ -53,6 +58,25 @@ const ContactForm = () => {
             placeholder="טלפון"
             className="form-input"
             required
+          />
+        </div>
+        <div className="relative">
+          <Input
+            dir="rtl"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="דוא״ל"
+            className="form-input"
+          />
+        </div>
+        <div className="relative">
+          <Textarea
+            dir="rtl"
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            placeholder="פרטי בדיקה"
+            className="form-input resize-none h-24"
           />
         </div>
         <Button
