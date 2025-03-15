@@ -3,18 +3,19 @@ import React from 'react';
 
 const EmgBenefitsSection = () => {
   return (
-    <section className="py-16 relative">
+    <section className="py-16 relative bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1">
             <img 
-              src="/lovable-uploads/fb3292c9-1ea4-41a8-a235-79f03a6d2b2c.png" 
+              src="/lovable-uploads/ad46cee9-3292-4d6b-b5e7-2925fcb99707.png" 
               alt="EMG Testing Equipment" 
-              className="rounded-lg shadow-lg w-full h-auto max-h-[600px] object-cover opacity-0 animate-fadeIn"
+              className="rounded-lg shadow-lg w-full h-auto object-cover opacity-0 animate-fadeIn"
+              style={{ height: '600px', objectPosition: 'center' }}
             />
           </div>
           <div className="order-1 md:order-2 opacity-0 animate-fadeIn animate-delay-200">
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md border border-gray-100">
+            <div className="bg-gray-50 p-8 rounded-lg shadow-md border border-gray-100 h-full">
               <h2 className="section-heading text-right text-medblue-dark mb-8">היתרונות של בדיקת EMG</h2>
               <div className="space-y-6 text-right">
                 <p className="text-gray-600">

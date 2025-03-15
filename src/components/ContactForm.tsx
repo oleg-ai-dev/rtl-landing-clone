@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Phone } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import { Textarea } from '@/components/ui/textarea';
 
@@ -87,12 +86,6 @@ const ContactForm = () => {
           {isLoading ? "שולח..." : "שליחה"}
         </Button>
       </form>
-      <div className="mt-6 flex justify-center">
-        <a href="tel:+972123456789" className="call-button">
-          <Phone size={18} className="rtl-flip" />
-          <span>התקשרו עכשיו</span>
-        </a>
-      </div>
     </div>
   );
 };

@@ -29,19 +29,19 @@ const Index = () => {
       {/* Header with Logo and CTA */}
       <header className="bg-medblue sticky top-0 z-50 shadow-md">
         <div className="container mx-auto py-3 px-4 flex justify-between items-center">
+          <div className="flex flex-col items-start">
+            <div className="text-white text-sm mb-1">בדיקת EMG</div>
+            <a href="tel:03-300-8863" className="flex items-center gap-2 bg-orange-500 text-white rounded-md px-4 py-2 font-medium text-sm hover:bg-orange-600 transition-colors">
+              <Phone size={16} />
+              <span>03-300-8863</span>
+            </a>
+          </div>
           <div className="text-white font-bold text-xl">
             <img 
-              src="/lovable-uploads/0129c4d1-1a85-436e-ac82-f1a37da97565.png"
+              src="/lovable-uploads/b3ae4162-c8d5-4e97-9a55-d20176c33296.png"
               alt="MEDASSIST Logo"
               className="h-10 object-contain"
             />
-          </div>
-          <div className="flex flex-col items-end">
-            <div className="text-white text-sm mb-1">בדיקת EMG</div>
-            <a href="tel:03-300-8863" className="flex items-center gap-2 bg-orange-500 text-white rounded-md px-4 py-2 font-medium text-sm hover:bg-orange-600 transition-colors">
-              <span>03-300-8863</span>
-              <Phone size={16} />
-            </a>
           </div>
         </div>
       </header>
@@ -123,13 +123,13 @@ const Index = () => {
             ].map((feature, index) => (
               <div 
                 key={index} 
-                className={`bg-medblue-dark p-6 rounded-lg shadow-md text-right opacity-0 animate-fadeIn ${feature.delay}`}
+                className={`bg-white p-6 rounded-lg shadow-md text-right opacity-0 animate-fadeIn ${feature.delay} border-2 border-medblue`}
               >
-                <div className="bg-white p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <div className="bg-medblue-dark p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                   <img src={feature.image} alt={feature.title} className="h-10 w-10 object-contain" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
-                <p className="text-medblue-light">{feature.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-medblue-dark">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -139,8 +139,60 @@ const Index = () => {
       {/* EMG Benefits Section */}
       <EmgBenefitsSection />
 
-      {/* About MEDASSIST Section */}
-      <AboutSection />
+      {/* About and Testimonials Section Side by Side */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* About Section */}
+            <div className="text-right opacity-0 animate-fadeIn">
+              <h2 className="section-heading text-medblue-dark mb-8">
+                <span className="text-medblue">MEDASSIST</span> אודות
+              </h2>
+              <div className="space-y-4 text-gray-600">
+                <p>
+                  <span className="font-bold text-medblue-dark">Medassist</span> היא חברת הרפואה הפרטית המובילה בישראל, אשר מתמחה במתן שירותי רפואה דחופים ובדיקות רפואיות שלא מבוצעות דיאגנוסטית בקופת חולים.
+                </p>
+                <p>
+                  הרופאים הטובים ביותר בתחומם, טכנולוגיה חדשה ומתקדמת, שירות מקצועי וליווי מלא.
+                </p>
+                <p>
+                  לכן, אם אתם זקוקים לבדיקה מצילת חיים, פנו אלינו בהקדם, כדי שנוכל לסייע בגילוי מוקדם ולהביא לשיפור משמעותי באיכות חייכם.
+                </p>
+              </div>
+              <div className="mt-8">
+                <div className="flex items-center justify-end gap-4">
+                  <div className="text-right">
+                    <div className="text-xl font-bold text-medblue-dark">MedAssist</div>
+                    <div className="text-sm text-gray-500">HaBarzel St 11, Tel Aviv-Yafo</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-end gap-2 mt-4">
+                  <div className="text-xl font-bold text-medgold">4.8</div>
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <svg 
+                        key={i} 
+                        className="w-5 h-5 text-medgold" 
+                        fill="currentColor" 
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <div className="text-sm text-gray-500">334 reviews</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Testimonials Section */}
+            <div>
+              <h2 className="section-heading text-center mb-8">המטופלים ממליצים</h2>
+              <TestimonialSection />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Process Section with parallax effect */}
       <section className="py-16 bg-gray-50 overflow-hidden">
@@ -204,14 +256,6 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="section-heading text-center mb-16">שאלות נפוצות</h2>
           <AccordionSection />
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="section-heading text-center mb-16">המטופלים ממליצים</h2>
-          <TestimonialSection />
         </div>
       </section>
 
