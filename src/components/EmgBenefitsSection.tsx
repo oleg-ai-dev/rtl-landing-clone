@@ -8,8 +8,8 @@ const EmgBenefitsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1">
             <img 
-              src="/lovable-uploads/ad46cee9-3292-4d6b-b5e7-2925fcb99707.png" 
-              alt="EMG Testing Equipment" 
+              src="/lovable-uploads/c0fa94d4-b48d-4e2c-adf3-2e7adc130901.png" 
+              alt="EMG Testing" 
               className="rounded-lg shadow-lg w-full h-auto object-cover opacity-0 animate-fadeIn"
               style={{ height: '600px', objectPosition: 'center' }}
             />

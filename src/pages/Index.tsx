@@ -29,14 +29,17 @@ const Index = () => {
       {/* Header with Logo and CTA */}
       <header className="bg-medblue sticky top-0 z-50 shadow-md">
         <div className="container mx-auto py-3 px-4 flex justify-between items-center">
-          <div className="flex flex-col items-start">
-            <div className="text-white text-sm mb-1">בדיקת EMG</div>
-            <a href="tel:03-300-8863" className="flex items-center gap-2 bg-orange-500 text-white rounded-md px-4 py-2 font-medium text-sm hover:bg-orange-600 transition-colors">
+          {/* Left Side (Call CTA) */}
+          <div className="flex items-center">
+            <a href="tel:03-300-8863" className="flex items-center gap-2 bg-orange-500 text-white rounded-md px-4 py-2 font-medium hover:bg-orange-600 transition-colors">
+              <span className="hidden sm:inline">03-300-8863</span>
               <Phone size={16} />
-              <span>03-300-8863</span>
             </a>
           </div>
-          <div className="text-white font-bold text-xl">
+          
+          {/* Right Side (Logo and Text) */}
+          <div className="flex items-center">
+            <div className="text-white text-sm me-3 font-medium">בדיקת EMG</div>
             <img 
               src="/lovable-uploads/b3ae4162-c8d5-4e97-9a55-d20176c33296.png"
               alt="MEDASSIST Logo"
