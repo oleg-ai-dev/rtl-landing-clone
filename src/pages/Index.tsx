@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Phone, ChevronDown, Award, CheckCircle, ThumbsUp } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
@@ -26,15 +27,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header with Logo and CTA */}
-      <header className="bg-medblue sticky top-0 z-50 shadow-md py-4">
-        <div className="container mx-auto px-4 flex justify-end items-center">
+      <header className="bg-medblue sticky top-0 z-50 shadow-md py-6">
+        <div className="container mx-auto px-4">
           <div className="flex flex-col items-end">
-            <div className="flex items-center mb-2">
-              <div className="text-white text-lg font-medium me-3">בדיקת EMG</div>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="text-white text-2xl font-medium">בדיקת EMG</div>
               <img 
                 src="/lovable-uploads/b3ae4162-c8d5-4e97-9a55-d20176c33296.png"
                 alt="MEDASSIST Logo"
-                className="h-12 object-contain"
+                className="h-14 object-contain"
               />
             </div>
             <a href="tel:03-300-8863" className="flex items-center gap-2 bg-orange-500 text-white rounded-md px-4 py-2 font-medium hover:bg-orange-600 transition-colors">
@@ -105,26 +106,26 @@ const Index = () => {
                 title: "צוות מומחים מנוסה",
                 description: "צוות הרופאים והמטפלים שלנו בעל ניסיון רב בביצוע בדיקות EMG ופירוש התוצאות.",
                 delay: "animate-delay-100",
-                icon: <Award className="h-8 w-8 text-white" />
+                icon: <Award className="h-10 w-10 text-white" />
               },
               {
                 title: "ציוד מתקדם",
                 description: "אנו משתמשים בטכנולוגיה המתקדמת ביותר לביצוע בדיקות EMG, המבטיחה תוצאות מדויקות.",
                 delay: "animate-delay-200",
-                icon: <CheckCircle className="h-8 w-8 text-white" />
+                icon: <CheckCircle className="h-10 w-10 text-white" />
               },
               {
                 title: "טיפול אישי",
                 description: "כל מטופל מקבל התייחסות אישית ותוכנית טיפול המותאמת לצרכיו הספציפיים.",
                 delay: "animate-delay-300",
-                icon: <ThumbsUp className="h-8 w-8 text-white" />
+                icon: <ThumbsUp className="h-10 w-10 text-white" />
               }
             ].map((feature, index) => (
               <div 
                 key={index} 
                 className={`bg-white p-6 rounded-lg shadow-md text-right opacity-0 animate-fadeIn ${feature.delay} border-2 border-medblue`}
               >
-                <div className="bg-medblue p-3 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <div className="bg-medblue p-3 rounded-full w-18 h-18 flex items-center justify-center mb-4">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-medblue-dark">{feature.title}</h3>
