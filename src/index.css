@@ -133,6 +133,23 @@
     );
     animation: shimmer 2s infinite;
   }
+  
+  /* New pulse animation for higher conversion */
+  .pulseAnimation {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+    }
+  }
 
   .glass-effect {
     background: rgba(255, 255, 255, 0.1);
@@ -162,13 +179,13 @@
 
   .call-button {
     @apply flex items-center justify-center gap-2 text-white font-semibold py-2 px-6 rounded-md transition-all duration-300;
-    background: linear-gradient(90deg, theme('colors.medblue.DEFAULT'), theme('colors.medblue.light'));
-    box-shadow: 0 4px 15px rgba(0, 120, 177, 0.3);
+    background: linear-gradient(90deg, theme('colors.orange.500'), theme('colors.orange.600'));
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
   }
 
   .call-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 120, 177, 0.4);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
   }
 
   .animate-delay-100 {
