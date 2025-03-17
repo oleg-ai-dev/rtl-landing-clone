@@ -1,14 +1,11 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Book, Menu, X } from 'lucide-react';
+import { Book, Menu } from 'lucide-react';
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
+  NavigationMenuItem,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -55,7 +52,7 @@ const Navigation = () => {
 
   // Desktop Navigation
   return (
-    <NavigationMenu className="text-white" dir="rtl">
+    <NavigationMenu className="text-white">
       <NavigationMenuList className="flex gap-4">
         <NavigationMenuItem>
           <Link to="/" className={navigationMenuTriggerStyle() + " bg-transparent hover:bg-white/20 text-white"}>
