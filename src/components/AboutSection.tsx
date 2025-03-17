@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, Award, Shield, Star, Diamond, Certificate, HeartHandshake } from 'lucide-react';
+import { Phone, Award, Shield, Star, Diamond, HeartHandshake, Trophy } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
@@ -62,7 +62,7 @@ const AboutSection = () => {
             <div className="mt-6 rounded-lg bg-gradient-to-r from-gray-50 to-white border border-gray-100 p-4 shadow-sm">
               <div className="flex items-center justify-end gap-2 mb-2">
                 <h4 className="font-semibold text-medblue-dark">הסמכות ואקרדיטציה</h4>
-                <Certificate size={18} className="text-medgold" />
+                <Trophy size={18} className="text-medgold" />
               </div>
               <div className="flex flex-wrap justify-end gap-2">
                 {["ISO 9001", "JCI", "תו תקן"].map((cert, i) => (
