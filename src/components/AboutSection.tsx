@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone } from 'lucide-react';
+import { Phone, Award, Shield, Star, Diamond, Certificate, HeartHandshake } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
   const scrollToSection = (id: string) => {
@@ -12,58 +13,136 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="bg-white">
-      <div className="text-right">
-        <h2 className="section-heading text-medblue-dark mb-8">
-          <span className="text-medblue">MEDASSIST</span> אודות
-        </h2>
-        <div className="space-y-4 text-gray-600">
-          <p>
-            <span className="font-bold text-medblue-dark">Medassist</span> היא חברת הרפואה הפרטית המובילה בישראל, אשר מתמחה במתן שירותי רפואה דחופים ובדיקות רפואיות שלא מבוצעות דיאגנוסטית בקופת חולים.
-          </p>
-          <p>
-            הרופאים הטובים ביותר בתחומם, טכנולוגיה חדשה ומתקדמת, שירות מקצועי וליווי מלא.
-          </p>
-          <p>
-            לכן, אם אתם זקוקים לבדיקה מצילת חיים, פנו אלינו בהקדם, כדי שנוכל לסייע בגילוי מוקדם ולהביא לשיפור משמעותי באיכות חייכם.
-          </p>
+    <section className="bg-white relative overflow-hidden">
+      {/* Premium corner accent */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-medgold-light to-transparent opacity-30"></div>
+      
+      {/* Left side diamond pattern (subtle background) */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 opacity-5">
+        <div className="h-full bg-medblue pattern-diamonds"></div>
+      </div>
 
-          {/* Added trust indicators */}
-          <div className="flex items-center justify-end space-x-4 rtl:space-x-reverse mt-4">
-            <div className="flex items-center text-medblue-dark">
-              <span className="font-bold text-xl">4.9</span>
-              <span className="text-sm mx-1">דירוג</span>
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 fill-medgold" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
+      <div className="relative">
+        <h2 className="section-heading text-right mb-8">
+          <span className="bg-gradient-to-r from-medblue to-medblue-dark bg-clip-text text-transparent font-bold">MEDASSIST</span>
+          <span className="text-medblue-dark"> אודות</span>
+        </h2>
+
+        <div className="bg-gradient-to-b from-white to-gray-50 rounded-xl p-6 shadow-md border border-gray-100">
+          <div className="space-y-4 text-gray-700 text-right">
+            <p className="leading-relaxed">
+              <span className="font-bold text-medblue-dark text-lg">Medassist</span>{" "}
+              היא חברת הרפואה הפרטית המובילה בישראל, אשר מתמחה במתן שירותי רפואה דחופים ובדיקות רפואיות שלא מבוצעות דיאגנוסטית בקופת חולים.
+            </p>
+            
+            {/* Features with icons */}
+            <div className="grid grid-cols-2 gap-4 my-6">
+              {[
+                { icon: <Award size={20} />, text: "צוות רפואי מהשורה הראשונה" },
+                { icon: <Shield size={20} />, text: "בטיחות ואמינות מירבית" },
+                { icon: <Diamond size={20} />, text: "טכנולוגיה מתקדמת" },
+                { icon: <HeartHandshake size={20} />, text: "ליווי אישי מלא" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-center justify-end gap-2 text-medblue-dark">
+                  <span className="text-sm font-medium">{item.text}</span>
+                  <div className="p-1.5 rounded-full bg-medblue/10 text-medblue-dark">{item.icon}</div>
+                </div>
+              ))}
+            </div>
+
+            <p className="leading-relaxed font-medium">
+              הרופאים הטובים ביותר בתחומם, טכנולוגיה חדשה ומתקדמת, שירות מקצועי וליווי מלא.
+            </p>
+            
+            <p className="leading-relaxed">
+              לכן, אם אתם זקוקים לבדיקה מצילת חיים, פנו אלינו בהקדם, כדי שנוכל לסייע בגילוי מוקדם ולהביא לשיפור משמעותי באיכות חייכם.
+            </p>
+
+            {/* Premium accreditation section */}
+            <div className="mt-6 rounded-lg bg-gradient-to-r from-gray-50 to-white border border-gray-100 p-4 shadow-sm">
+              <div className="flex items-center justify-end gap-2 mb-2">
+                <h4 className="font-semibold text-medblue-dark">הסמכות ואקרדיטציה</h4>
+                <Certificate size={18} className="text-medgold" />
+              </div>
+              <div className="flex flex-wrap justify-end gap-2">
+                {["ISO 9001", "JCI", "תו תקן"].map((cert, i) => (
+                  <span key={i} className="px-2 py-0.5 bg-medblue/5 text-xs font-medium text-medblue-dark rounded border border-medblue/10">
+                    {cert}
+                  </span>
                 ))}
               </div>
             </div>
-            <div className="text-medblue-dark font-medium">
-              <span>כ-450 מטופלים בחודש</span>
+
+            {/* Trust indicators with improved design */}
+            <Card className="mt-6 bg-gradient-to-br from-white via-white to-gray-50 border border-gray-100 shadow-md overflow-hidden">
+              <CardContent className="p-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-col items-end">
+                    <div className="flex items-center gap-1 mb-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} className="fill-medgold text-medgold" />
+                      ))}
+                    </div>
+                    <div className="text-right">
+                      <span className="font-bold text-medblue-dark text-xl">4.9</span>
+                      <span className="text-sm text-gray-500 mx-1">מתוך 5</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col items-end">
+                    <div className="text-medblue-dark font-medium mb-1">מספר מטופלים</div>
+                    <div className="flex items-center gap-1">
+                      <div className="flex space-x-1 rtl:space-x-reverse">
+                        {[...Array(3)].map((_, i) => (
+                          <div 
+                            key={i} 
+                            className="h-2 w-8 rounded-full" 
+                            style={{ 
+                              background: i === 0 
+                                ? 'linear-gradient(90deg, #0078B1, #00B4E6)' 
+                                : i === 1 
+                                  ? 'linear-gradient(90deg, #00B4E6, #D4B776)' 
+                                  : 'linear-gradient(90deg, #D4B776, #EBD8A9)' 
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <div className="text-lg font-bold text-medblue-dark">450+</div>
+                    </div>
+                    <span className="text-xs text-gray-500">מטופלים בחודש</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Enhanced CTA button */}
+          <div className="mt-8">
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              className="relative overflow-hidden group bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white flex items-center gap-2 px-7 py-3 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <div className="absolute top-0 left-0 w-full h-full bg-white opacity-10 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
+              <span className="font-medium">צור קשר עכשיו</span>
+              <Phone size={16} />
+            </Button>
+          </div>
+
+          {/* Image with improved presentation */}
+          <div className="mt-8 relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-medblue/20 to-medgold/20 rounded-lg transform scale-105 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10"></div>
+            <img 
+              src="/lovable-uploads/40fc7cbf-5c01-4dbe-843e-0347cc6c5c0d.png" 
+              alt="MEDASSIST Facility" 
+              className="rounded-lg shadow-xl w-full h-auto transform transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+            <div className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-lg shadow-md">
+              <div className="flex items-center gap-1">
+                <span className="text-xs font-medium text-medblue-dark">מרכז רפואי מתקדם</span>
+                <Diamond size={12} className="text-medgold" />
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Added CTA button */}
-        <div className="mt-6">
-          <Button 
-            onClick={() => scrollToSection('contact')}
-            className="bg-orange-500 hover:bg-orange-600 text-white flex items-center gap-2 px-6 py-3 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            <span>צור קשר עכשיו</span>
-            <Phone size={16} />
-          </Button>
-        </div>
-
-        <div className="mt-8">
-          <img 
-            src="/lovable-uploads/40fc7cbf-5c01-4dbe-843e-0347cc6c5c0d.png" 
-            alt="MEDASSIST Facility" 
-            className="rounded-lg shadow-xl w-full h-auto"
-          />
         </div>
       </div>
     </section>
