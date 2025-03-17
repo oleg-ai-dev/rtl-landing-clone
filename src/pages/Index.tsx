@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Phone, ChevronDown, Award, CheckCircle, ThumbsUp, ChevronUp, Clock } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
@@ -5,6 +6,7 @@ import AccordionSection from '@/components/AccordionSection';
 import TestimonialSection from '@/components/TestimonialSection';
 import EmgBenefitsSection from '@/components/EmgBenefitsSection';
 import AboutSection from '@/components/AboutSection';
+import Navigation from '@/components/Navigation';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 
@@ -72,10 +74,13 @@ const Index = () => {
               />
             </div>
             
-            <a href="tel:03-300-8863" className="flex items-center gap-2 bg-orange-500 text-white rounded-md px-4 py-2 font-medium hover:bg-orange-600 transition-colors shadow-md">
-              <span>03-300-8863</span>
-              <Phone size={16} />
-            </a>
+            <div className="flex items-center gap-4">
+              <Navigation />
+              <a href="tel:03-300-8863" className="flex items-center gap-2 bg-orange-500 text-white rounded-md px-4 py-2 font-medium hover:bg-orange-600 transition-colors shadow-md">
+                <span>03-300-8863</span>
+                <Phone size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </header>
